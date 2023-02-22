@@ -1,0 +1,34 @@
+ALGORITHM A car rental organization
+VAR
+   numkilo: FLOAT;
+   numday: INTEGER;
+   costskilo : FLOAT;
+   costday: FLOAT;
+CONST
+    r1: FLOAT:= 0.7;
+    r2: FLOAT:=0.4;
+    r3: FLOAT:=0.2;
+    p_d: INTEGER:=100;
+    ins : FLOAT:=0.3;
+    VAT : FLOAT:=0.18
+BEGIN
+    write("give the total number of kilometres")
+    read(numkilo)
+    write("give the total number of days ")
+    read(numday)
+    IF (numkilo<=100) THEN
+        costkilo:=r1*numkilo 
+    ELSE_IF (numkilo<=1000) THEN
+        costkilo:=100*r1 +(numkilo-100)*r2
+    ELSE
+        costkilo:=100*r1 + 1000*r2 +(numkilo-1100)*r3 
+    END_IF
+
+    costkilo:=(costkilo+numday*ins)*1.18
+    costday:=(numday*(p_d+ins))*1.18
+    IF (costkilo<costday) THEN
+       write("costkilo better")
+    ELSE
+        write("costday better")
+    END_IF
+END

@@ -1,0 +1,11 @@
+ALGORITHM task1
+VAR
+    x,y,z : INTEGER;
+    temp : INTEGER;
+BEGIN
+    read(x,y,z)
+    temp :=x
+    x:=y
+    y:=z
+    z:=temp
+END
